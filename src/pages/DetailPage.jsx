@@ -44,7 +44,7 @@ function DetailPage(){
                 <div className="absolute inset-0 bg-linear-to-t from-space-deep to-transparent">
                 </div>
             </div>
-            <div className="px-8 py-6 flex gap-6">
+            <div className="px-8 py-6 flex flex-col md:flex-row gap-6">
                 <img src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} 
                 alt="" 
                 className="w-32 rounded-lg shadow-lg flex shrink-0"
