@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Moviecard from "../components/MovieCard"
+import LoadingSpinner from "../components/LoadingSpinner"
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY
 const BASE_URL = import.meta.env.VITE_TMDB_BASE_URL
@@ -25,7 +26,7 @@ function HomePage(){
         })
     }, [])
 
-    if (loading) return <p className="text-star-white text-center mt-10">Loading...</p>
+    if (loading) return <LoadingSpinner/>
     if (error) return <p className="text-red-400 text-center mt-10">{error}</p>
 
     return(
