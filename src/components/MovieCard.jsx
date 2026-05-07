@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 function Moviecard({movie}){
     return(
         <Link className='block bg-space-card rounded-xl overflow-hidden
-        border border-space-navy hover:border-accent-purple transition-all duration-300'
+        border border-space-navy hover:border-accent-purple transition-all duration-300
+        hover:scale-105'
         to={`/movie/${movie.id}`}>
         <img className='w-full aspect-[2/3] object-cover' 
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 

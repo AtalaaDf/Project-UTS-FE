@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import Moviecard from "../components/MovieCard"
 import LoadingSpinner from "../components/LoadingSpinner"
+import HeroSection from "../components/HeroSection"
+import MovieGrid from "../components/MovieGrid"
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY
 const BASE_URL = import.meta.env.VITE_TMDB_BASE_URL
@@ -26,18 +27,18 @@ function HomePage(){
         })
     }, [])
 
+    useEffect(()=>{
+        document.title = "Movie"
+    }, [])
+
     if (loading) return <LoadingSpinner/>
     if (error) return <p className="text-red-400 text-center mt-10">{error}</p>
 
     return(
         <div className="px-6 py-8">
+            <HeroSection/>
             <h1 className="text-star-white text-2xl font-bold mb-6">Popular Movies</h1>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {movies.map(movie=>(
-                    <Moviecard key={movie.id} movie = {movie}/>
-                ))}
-
-            </div>
+            <MovieGrid movies={movies}/>
         </div>
     )
 }

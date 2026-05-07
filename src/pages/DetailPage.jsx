@@ -34,6 +34,12 @@ function DetailPage(){
             })
         }, [id])
 
+        useEffect(() => {
+            if (movie !=null) {
+                document.title = `${movie.title} | Movie`
+            }
+        }, [movie])
+
         if (loading) return <LoadingSpinner/>
         if(error) return <p className="text-red-400 text-center mt-10">{error}</p>
 
