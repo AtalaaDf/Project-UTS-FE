@@ -1,8 +1,30 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import '../index.css'
 
 function Moviecard({movie}){
+
+    const cardRef = useRef(null)
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = "fadeInUp 1s ease forwards"
+                } else {
+                    entry.target.style.animation = "none"
+                }
+            })
+        })
+
+        observer.observe(cardRef.current)
+
+        return()=> observer.disconnect()
+
+    }, [])
+
     return(
-        <Link className='block bg-space-card rounded-xl overflow-hidden
+        <Link ref={cardRef} className='block bg-space-card rounded-xl overflow-hidden
         border border-space-navy hover:border-accent-purple transition-all duration-300
         hover:scale-105'
         to={`/movie/${movie.id}`}>

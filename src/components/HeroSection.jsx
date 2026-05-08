@@ -10,6 +10,7 @@ function HeroSection(){
             </div>
         <h1 className="text-5xl font-bold text-accent-purple hover:scale-105 transition-transform duration-300"
         style={{animationName:"glow", animationIterationCount:"infinite", animationDuration:"2s"}}>
+            <span className="text-black">B</span>
         igers 
         </h1>
         <p className="text-moon-gray mt-4">
