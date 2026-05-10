@@ -12,7 +12,7 @@ function SearchBar({onSearch}){
     }
 
     return(
-        <div className="relative w-44">
+        <div className="relative w-44 mb-6">
         <input type="text" value={query} onChange={handleChange} 
         placeholder="Search Movies"
         className="w-full px-3 py-2 rounded-full bg-space-card border border-space-navy
