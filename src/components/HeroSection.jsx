@@ -1,4 +1,9 @@
-function HeroSection(){
+function HeroSection({gridRef}){
+
+function handleScroll(){
+    gridRef.current.scrollIntoView({ behavior: 'smooth' })
+}
+
     return(
     <div className="text-center py-20 relative">
         <div className="absolute inset-0 -z-10" style={{
@@ -17,7 +22,8 @@ function HeroSection(){
         explore the movies
         </p>
         <button className="text-star-white text-sm mb-4 hover:bg-space-navy transition-colors
-                    cursor-pointer rounded-full px-3 py-1">Explore Now</button>
+                    cursor-pointer rounded-full px-3 py-1"
+                    onClick={handleScroll}>Explore Now</button>
     </div>
     )
 }
